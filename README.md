@@ -1,4 +1,4 @@
-# base
+# Vue StaticWeb
 
 ## Project setup
 
