@@ -1,0 +1,1 @@
+import{_ as o}from"./HomeMain-e0d69005.js";import{D as r,E as t}from"./index-3f637c62.js";import"./lazy-9ac2a19d.js";import"./VRow-836ed456.js";const n={__name:"Home",setup(e){return(_,a)=>(r(),t(o))}};export{n as default};
