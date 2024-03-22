@@ -1,0 +1,9 @@
+:root[theme = 'light']{
+    --bgColor:#fff;
+    --textColor:#000;
+}
+
+:root[theme = 'dark']{
+    --bgColor: #000
+    --textColor:#fff;
+}

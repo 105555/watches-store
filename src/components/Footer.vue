@@ -26,6 +26,9 @@ const socialMedias = reactive([
                     variant="text" target="_blank"></v-btn>
             </v-col>
             <v-col class="text-center mt-4" cols="12">
+                <strong>TEL : (03)362-3344</strong>
+            </v-col>
+            <v-col class="text-center mt-4" cols="12">
                 <strong>@2024 H's Watchlex</strong>
             </v-col>
         </v-row>
