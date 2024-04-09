@@ -1,10 +1,13 @@
 <template>
-    <ShopMain></ShopMain>
-    <ScrollTop></ScrollTop>
+    <Shop-Main></Shop-Main>
 </template>
 
-<script setup>
+<script>
 import ShopMain from '@/components/ShopMain'
-import ScrollTop from '@/components/ScrollTop.vue'
+export default{
+    components:{
+        ShopMain
+    }
+}
 </script>
 

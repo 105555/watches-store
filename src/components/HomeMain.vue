@@ -143,6 +143,7 @@ const nylon = reactive([
   width: 100%;
   float: left;
   margin: 10px;
+  cursor: pointer;
   .info {
     opacity: 0;
     position: absolute;

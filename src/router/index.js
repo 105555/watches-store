@@ -54,6 +54,33 @@ const routes = [
       
     ],
   },
+  {
+    path: '/login',
+    component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Login',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Login.vue'),
+      },
+      {
+        path: 'ForgotPwd',
+        name: 'ForgotPwd',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/ForgotPwd.vue'),
+      },
+    ],
+  },
+  {
+    path:'/Register',
+    component: () => import('@/layouts/default/Default.vue'),
+    children:[
+      {
+        path: '',
+        name: 'Register',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Register.vue'),
+      },
+    ]
+  }
   
 ]
 

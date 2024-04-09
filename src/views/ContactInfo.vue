@@ -1,13 +1,13 @@
 <template>
- <contact></contact>
+ <Contact-Main></Contact-Main>
 </template>
 
 <script>
-import Contact from '@/components/Contact.vue'
+import ContactMain from '@/components/ContactMain.vue'
 export default {
   name:'ContactInfo',
   components:{
-    Contact,
+    ContactMain,
   }
 };
 </script>

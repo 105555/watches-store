@@ -1,4 +1,6 @@
 <template>
+  <br>
+      <h3 class="left">首頁 / 搜尋商品</h3>
     <v-container>
         <v-row class="box-container">
           <v-col cols="12" md="6" class="img-container">
@@ -34,6 +36,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.left {
+  margin-left: 45px;
+}
 .box-container{
     padding-top: 30px;
 }

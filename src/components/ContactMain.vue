@@ -1,6 +1,6 @@
 <template>
     <br>
-    <h3 class="left">問題 / 聯絡我們</h3>
+    <h3 class="left">首頁 / 聯絡我們</h3>
     <div class="form-container">
       <v-form class="form" @submit.prevent="submitForm">
         <v-autocomplete

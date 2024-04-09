@@ -1,12 +1,12 @@
 <template>
-    <Info></Info>
+    <Info-Main></Info-Main>
 </template>
 
 <script>
-import Info from '@/components/Info.vue'
+import InfoMain from '@/components/InfoMain.vue'
 export default{
     components:{
-        Info
+        InfoMain
     }
 }
 </script>
