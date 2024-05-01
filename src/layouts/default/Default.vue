@@ -11,5 +11,5 @@
   import DefaultBar from './AppBar.vue'
   import DefaultView from './View.vue'
   import DefaultFooter from '@/layouts/default/Footer.vue'
-  import ScrollTop from '@/components/ScrollTop.vue'
+  import ScrollTop from '@/components/scroll/ScrollTop.vue'
 </script>

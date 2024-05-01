@@ -1,9 +1,7 @@
 <template>
- <transition name="fade">
-    <v-btn v-if="isShow"  @click="scrollTop"  class="p">
-        <v-icon class="white">mdi-arrow-up</v-icon>
-      </v-btn>
- </transition>
+    <v-btn v-if="isShow" @click="scrollTop" class="scrollBtn">
+        <v-icon class="icon">mdi-arrow-up</v-icon>
+    </v-btn>
 </template>
 
 <script>
@@ -46,14 +44,20 @@ export default {
 
 
 <style>
-.p{
+.v-btn--size-default{
+    min-width: 20px;
+}
+
+.scrollBtn {
     position: fixed;
     right: 40px;
     bottom: 40px;
     background-color: #006400;
-    border-radius: 30px;
+    border-radius: 100%;
+    z-index: 1;
 }
-.white{
+
+.icon {
     color: #fff;
 }
 </style>
