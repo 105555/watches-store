@@ -118,4 +118,13 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
+router.beforeEach((to, from, next) => {
+  const isLoggedIn = store.state.user.loginState
+  if(to.name === 'DashBoard' && !isLoggedIn){
+    next({name: 'Login'})
+  }else{
+    next();
+  }
+})
+
 export default router

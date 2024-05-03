@@ -48,7 +48,8 @@
 <script>
 import router from '@/router' //引入後不需使用 this
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/plugins/firebase"
+import { auth } from "@/plugins/firebase";
+import { mapMutations } from 'vuex';
 export default {
     name: 'LoginMain',
     data() {
@@ -68,6 +69,7 @@ export default {
                 .then(() => {
                     this.$nextTick(() => {
                         this.dialogtext = '登入成功';
+                        this.setLoginState(true)
                         this.isShow = true;
                         setTimeout(() => {
                             router.push({ name: 'DashBoard' });
@@ -103,6 +105,7 @@ export default {
         toggleVisibility() {
             this.visible = !this.visible;
         },
+        ...mapMutations("user", ["setUser", "setLoginState"]),
     }
 
 }

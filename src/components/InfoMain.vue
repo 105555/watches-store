@@ -1,6 +1,6 @@
 <template>
   <br>
-      <h3 class="left">首頁 / 搜尋商品</h3>
+      <h3 class="left">首頁 / 店面資訊</h3>
     <v-container>
         <v-row class="box-container">
           <v-col cols="12" md="6" class="img-container">
