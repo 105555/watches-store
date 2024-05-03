@@ -27,7 +27,7 @@ const metal = reactive([
   {
     description: "SPB381",
     imagePath:
-      "https://revolutionwatch.com/cdn-cgi/image/width=1500,height=1000,fit=crop,quality=80,format=auto,onerror=redirect,metadata=none/wp-content/uploads/2023/08/05-Seiko-Prospex-SPB381.jpg",
+      "https://watchesbysjx.com/wp-content/uploads/2023/06/Seiko-King-Seiko-SJE091-black-dial-lifestyle.jpg",
   },
   {
     description: "SPB417",
@@ -94,11 +94,11 @@ const nylon = reactive([
     <h3>金屬</h3>
     <br />
     <v-row>
-      <v-col v-for="(material, index) in metal" :key="index" cols="12" md="3">
+      <v-col v-for="(material, index) in metal" :key="index" cols="12" md="3" target="_blank" @click.stop="">
         <v-card class="pic">
           <v-img :src="material.imagePath"></v-img>
           <div class="info">
-            <button class="mb-1">View More</button>
+            <button class="mb-1" @click.stop='navigateToItem'>View More</button>
             <p>{{ material.description }}</p>
           </div>
         </v-card>
@@ -113,7 +113,7 @@ const nylon = reactive([
         <v-card class="pic">
           <v-img :src="material.imagePath"></v-img>
           <div class="info">
-            <button class="mb-1">View More</button>
+              <button class="mb-1" @click.stop='navigateToItem'>View More</button>
             <p>{{ material.description }}</p>
           </div>
         </v-card>
@@ -125,18 +125,28 @@ const nylon = reactive([
     <br />
     <v-row>
       <v-col v-for="(material, index) in leather" :key="index" cols="12" md="3">
-        <v-card class="pic">
-          <v-img :src="material.imagePath"></v-img>
-          <div class="info">
-            <button class="mb-2">View More</button>
-            <p>{{ material.description }}</p>
-          </div>
-        </v-card>
+        
+          <v-card class="pic">
+            <v-img :src="material.imagePath"></v-img>
+            <div class="info">
+              <button class="mb-2" @click.stop='navigateToItem'>View More</button>
+              <p>{{ material.description }}</p>
+            </div>
+          </v-card>
+        
       </v-col>
     </v-row>
   </v-container>
 </template>
-
+<script>
+export default {
+  methods: {
+    navigateToItem() {
+      this.$router.push({ name: 'ShopItem'});
+    }
+  }
+}
+</script>
 <style lang="scss" scoped>
 .pic {
   position: relative;

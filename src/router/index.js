@@ -1,6 +1,6 @@
 // Composables
 import { createRouter, createWebHashHistory } from 'vue-router'
-
+import store from '@/store'
 const routes = [
   {
     path:'/',
@@ -25,9 +25,15 @@ const routes = [
       {
         path: '',
         name: 'Shop',
+        meta: { title: " 商品 | Henlex's" },
         component: () => import(/* webpackChunkName: "home" */ '@/views/Shop.vue'),
       },
-      
+      {
+        path: 'shopItem',
+        name: 'ShopItem',
+        meta: { title: " 【藍水晶】Zxc 水行俠獨裁者 | Henlex's" },
+        component: () => import(/* webpackChunkName: "home" */ '@/views/item/ShopItem.vue'),
+      },
     ],
   },
   {
@@ -37,6 +43,7 @@ const routes = [
       {
         path: '',
         name: 'StoreInfo',
+        meta: { title: " 店鋪資訊 | Henlex's" },
         component: () => import(/* webpackChunkName: "home" */ '@/views/StoreInfo.vue'),
       },
       
@@ -49,6 +56,7 @@ const routes = [
       {
         path: '',
         name: 'ContactInfo',
+        meta: { title: "聯絡 | Henlex's" },
         component: () => import(/* webpackChunkName: "home" */ '@/views/ContactInfo.vue'),
       },
       
@@ -61,12 +69,14 @@ const routes = [
       {
         path: '',
         name: 'Login',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Login.vue'),
+        meta: { title: "帳號 | Henlex's" },
+        component: () => import(/* webpackChunkName: "home" */ '@/views/auth/Login.vue'),
       },
       {
         path: 'ForgotPwd',
         name: 'ForgotPwd',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/ForgotPwd.vue'),
+        meta: { title: "帳號 | Henlex's" },
+        component: () => import(/* webpackChunkName: "home" */ '@/views/auth/ForgotPwd.vue'),
       },
     ],
   },
@@ -77,16 +87,35 @@ const routes = [
       {
         path: '',
         name: 'Register',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Register.vue'),
+        meta: { title: "建立帳號 | Henlex's" },
+        component: () => import(/* webpackChunkName: "home" */ '@/views/auth/Register.vue'),
+      },
+    ]
+  },
+  {
+    path:'/DashBoard',
+    component: () => import('@/layouts/default/Default.vue'),
+    children:[
+      {
+        path: '',
+        name: 'DashBoard',
+        meta: { title: " 帳戶 | Henlex's" },
+        component: () => import(/* webpackChunkName: "home" */ '@/views/DashBoard.vue'),
       },
     ]
   }
   
 ]
 
+
 const router = createRouter({
   history: createWebHashHistory(process.env.BASE_URL),
   routes,
 })
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title || " Henlex's ";
+  next();
+});
 
 export default router

@@ -15,7 +15,7 @@
             <div class="text-center">
                 <v-card>
                     <div class="mt-7 mb-3">
-                        <v-text>{{ dialogtext }}</v-text>
+                        <div>{{ dialogtext }}</div>
                     </div>
                     <v-card-actions class="mb-3 d-flex  justify-center tonal">
                         <v-btn text="確認" @click="isShow = false" color="#5865f2" variant="flat"></v-btn>

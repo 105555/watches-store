@@ -33,7 +33,7 @@
       <div class="text-center">
         <v-card>
           <div class="mt-7 mb-5">
-            <v-text>{{ dialogtext }}</v-text>
+            <div>{{ dialogtext }}</div>
           </div>
         </v-card>
       </div>
