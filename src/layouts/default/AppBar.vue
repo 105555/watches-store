@@ -90,6 +90,7 @@
 import { mapState, mapMutations } from "vuex";
 import { auth } from "@/plugins/firebase"
 import { signOut } from "firebase/auth";
+import { setStatus } from '@/plugins/localStorage'
 import router from '@/router'
 export default {
   name: "AppBar",
@@ -109,6 +110,7 @@ export default {
         this.isShow = false;
         this.setUser(null);
         this.setLoginState(false);
+        setStatus(false);
         router.push( { name:'Home'} );
       })
     },

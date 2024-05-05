@@ -1,6 +1,6 @@
 // Composables
 import { createRouter, createWebHashHistory } from 'vue-router'
-import store from '@/store'
+import { getStatus } from '@/plugins/localStorage'
 const routes = [
   {
     path:'/',
@@ -119,7 +119,7 @@ router.beforeEach((to, from, next) => {
 });
 
 router.beforeEach((to, from, next) => {
-  const isLoggedIn = store.state.user.loginState
+  const isLoggedIn = getStatus();
   if(to.name === 'DashBoard' && !isLoggedIn){
     next({name: 'Login'})
   }else{

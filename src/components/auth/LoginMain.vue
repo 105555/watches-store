@@ -50,6 +50,7 @@ import router from '@/router' //引入後不需使用 this
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/plugins/firebase";
 import { mapMutations } from 'vuex';
+import { setStatus } from '@/plugins/localStorage'
 export default {
     name: 'LoginMain',
     data() {
@@ -71,6 +72,7 @@ export default {
                         this.dialogtext = '登入成功';
                         this.setLoginState(true)
                         this.isShow = true;
+                        setStatus('true');
                         setTimeout(() => {
                             router.push({ name: 'DashBoard' });
                         }, 500)

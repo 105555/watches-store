@@ -78,7 +78,7 @@ const nylon = reactive([
 </script>
 
 <template>
-  <v-carousel height="615" hide-delimiters="true" cycle="true" interval="1700">
+  <v-carousel height="615" hide-delimiters="true" :cycle="true" interval="1700">
     <v-carousel-item
       cover
       v-for="(item, index) in items"
