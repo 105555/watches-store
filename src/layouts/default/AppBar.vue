@@ -1,11 +1,8 @@
 <template>
-  <v-app-bar class="px-1" color="#006400">
+  <v-app-bar class="px-1" style="background:linear-gradient(to right, #1a6040, #197149); color:#eee">
     <v-app-bar-nav-icon icon="mdi-home" to="/index"></v-app-bar-nav-icon>
     <v-app-bar-title class="mr-10">Henlex's</v-app-bar-title>
     <v-row>
-      <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/index"
-        >首頁</v-btn
-      >
       <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/shop"
         >購物</v-btn
       >
@@ -44,7 +41,7 @@
     <v-menu min-width="200px" rounded>
       <template v-slot:activator="{ props }">
         <v-btn icon v-bind="props">
-        <v-avatar color="brown" size="large">
+        <v-avatar color="#2E7D32" size="large">
             <v-icon v-if="loginState === true">mdi-account-circle</v-icon>
             <v-icon v-else>mdi-login</v-icon>
           </v-avatar>
@@ -89,8 +86,8 @@
 <script>
 import { mapState, mapMutations } from "vuex";
 import { auth } from "@/plugins/firebase"
-import { signOut } from "firebase/auth";
-import { setStatus } from '@/plugins/localStorage'
+import { signOut, onAuthStateChanged } from "firebase/auth";
+import { setStatus, getStatus } from '@/plugins/localStorage'
 import router from '@/router'
 export default {
   name: "AppBar",
@@ -104,24 +101,37 @@ export default {
     showDialog() {
       this.isShow = true;
       this.dialogtext='是否登出？';
-    },
+  },
     logout(){
       signOut(auth).then(()=>{
         this.isShow = false;
         this.setUser(null);
         this.setLoginState(false);
-        setStatus(false);
+        setStatus("false");
         router.push( { name:'Home'} );
+      })
+    },
+    checkUserAuth() {
+      onAuthStateChanged(auth, (user) => {
+        if (user !== null) {
+          setStatus("true");
+        } else {
+          this.user = {};
+          this.setLoginState(false);
+        }
       })
     },
     ...mapMutations("user", ["setUser", "setLoginState"]),
   },
   computed: {
     loginState(){
-      return this.loginState;
+      return getStatus();
     },
     ...mapState("user", ["loginState"]),
   },
+  mounted(){
+    this.checkUserAuth();
+  }
 };
 </script>
 
@@ -137,9 +147,6 @@ export default {
   padding-top: 20px;
   padding-right: 70px;
   margin-left: -100px;
-}
-.green {
-  background-color: linear-gradient(90deg, #0b3e27, #197149);
 }
 .height350 {
   height: 350px;

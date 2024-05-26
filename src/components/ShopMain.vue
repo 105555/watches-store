@@ -30,10 +30,10 @@
           <v-card height="100%" class="pic" link>
             <router-link :to="{ name: 'ShopItem', params: { id: item.id } }">
               <v-img :src="item.img"></v-img>
-              <v-card-title class="mt-3">{{ item.title }}</v-card-title>
-              <v-card-subtitle>價格 ： {{ item.prices }}</v-card-subtitle>
+              <v-card-title class="mt-3" style="color:#000">{{ item.title }}</v-card-title>
+              <v-card-subtitle style="color:#000">價格 ： {{ item.prices }}</v-card-subtitle>
             </router-link>
-            <v-btn class="mt-5 mb-7">+ 加入</v-btn>
+            <v-btn class="mt-5 mb-7" @click='addToCart'>+ 加入</v-btn>
           </v-card>
         </v-col>
       </v-row>
@@ -80,7 +80,7 @@ export default {
         {
           id: 5,
           title: "SUR461",
-          img: "https://up.bizhitupian.com/pic_360/f5/2d/05/f52d05e98ed28d8e526269f7e3245460.jpg",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWLwD92x9hC1mMir98_N1wK4D31vqJYx1r2l9CPcCwFz_sECiD89J-NMBcC6LfpuxM6gE&usqp=CAU",
           prices: "$12800",
         },
         {
@@ -92,7 +92,7 @@ export default {
         {
           id: 7,
           title: "Ga6",
-          img: "https://up.bizhitupian.com/pic_360/f5/2d/05/f52d05e98ed28d8e526269f7e3245460.jpg",
+          img: "https://png.pngtree.com/thumb_back/fh260/background/20210912/pngtree-pocket-watch-on-the-book-image_864572.jpg",
           prices: "$4999",
         },
         {
@@ -116,7 +116,7 @@ export default {
         {
           id: 11,
           title: "Az7",
-          img: "https://up.bizhitupian.com/pic_360/f5/2d/05/f52d05e98ed28d8e526269f7e3245460.jpg",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSqq2x-yl531gz1Hm5cYO5E5tcE_0IBTY6k472dwz0mA&s",
           prices: "$8990",
         },
         {
@@ -152,7 +152,7 @@ export default {
         {
           id: 17,
           title: "SSA426",
-          img: "https://up.bizhitupian.com/pic_360/f5/2d/05/f52d05e98ed28d8e526269f7e3245460.jpg",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSqq2x-yl531gz1Hm5cYO5E5tcE_0IBTY6k472dwz0mA&s",
           prices: "$9000",
         },
         {
@@ -197,6 +197,9 @@ export default {
         return text.indexOf(search) > -1;
       });
     },
+    // addToCart(){
+      
+    // }
   },
   watch: {
     page(newVal, oldVal) {

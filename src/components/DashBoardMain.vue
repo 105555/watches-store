@@ -1,5 +1,5 @@
 <template>
-  <v-app class="bg-teal-lighten-5">
+  <v-app style="background: linear-gradient(to right, #e2e2e2, #d7f0e5);">
     <v-main class="pb-16 pt-16">
       <v-container >
         <v-card class="mb-4">

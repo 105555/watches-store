@@ -44,7 +44,7 @@
         </div>
         <div class="mt-6 fz-12" style="color: #C62828" v-show="count > 5"> <v-icon>mdi-alert</v-icon> 此商品為近期熱門 因此每隻帳號限購五隻</div>
         <div class="mt-6 d-flex justify-space-between">
-          <v-btn color="error" width="48%" variant="flat">加入購物車</v-btn>
+          <v-btn color="error" width="48%" variant="flat" @click.stop='addToCart'>加入購物車</v-btn>
           <v-btn color="success" width="48%" variant="outlined">立即購買</v-btn>
         </div>
         <div class="mt-12 text-center mb-12" style="color: #0d47a1">
@@ -73,6 +73,9 @@ export default {
         this.count--;
       }
     },
+    addToCart(){
+      
+    }
   },
 };
 </script>

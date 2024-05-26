@@ -52,7 +52,7 @@ export default {
     position: fixed;
     right: 40px;
     bottom: 40px;
-    background-color: #006400;
+    background-color: #1d651d;
     border-radius: 100%;
     z-index: 1;
 }

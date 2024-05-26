@@ -1,5 +1,5 @@
 <template>
-  <v-container class="bg-teal-lighten-5 fill-height" fluid>
+  <v-container class="fill-height" style="background: linear-gradient(to right, #e2e2e2, #d7f0e5);" fluid>
     <v-form v-model="form" class="mx-auto bg-white rounded-lg pa-5" max-width="344" title="註冊">
       <v-container>
         <div class="text-h4 text-center mb-5">會員註冊</div>
