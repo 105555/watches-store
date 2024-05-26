@@ -1,7 +1,7 @@
 <template>
     <br>
     <h3 class="left">首頁 / 聯絡我們</h3>
-    <div class="form-container">
+    <div class="form-container" data-aos="zoom-in"  data-aos-duration="400" >
       <v-form class="form" @submit.prevent="submitForm">
         <v-autocomplete
           v-model="selected"
@@ -17,6 +17,15 @@
   
         <v-divider></v-divider>
   
+        <v-text-field
+          v-model="subject"
+          hide-details
+          label="Email"
+          single-line
+        ></v-text-field>
+  
+        <v-divider></v-divider>
+
         <v-text-field
           v-model="subject"
           hide-details
@@ -39,6 +48,7 @@
         <br>
       </v-form>
     </div>
+  
   </template>
   
   <script>

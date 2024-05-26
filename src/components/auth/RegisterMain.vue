@@ -1,6 +1,7 @@
 <template>
-  <v-container class="fill-height" style="background: linear-gradient(to right, #e2e2e2, #d7f0e5);" fluid>
-    <v-form v-model="form" class="mx-auto bg-white rounded-lg pa-5" max-width="344" title="註冊">
+  <v-container class="fill-height" style="background: linear-gradient(to right, #e2e2e2, #d7f0e5);" fluid >
+    <v-form v-model="form" class="mx-auto bg-white rounded-lg pa-5" max-width="344" title="註冊"  data-aos="flip-right"
+    data-aos-duration="1000">
       <v-container>
         <div class="text-h4 text-center mb-5">會員註冊</div>
         <v-text-field v-model="user.name" color="primary" label="User name..." variant="underlined"

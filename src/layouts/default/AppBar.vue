@@ -1,7 +1,7 @@
 <template>
   <v-app-bar class="px-1" style="background:linear-gradient(to right, #1a6040, #197149); color:#eee">
     <v-app-bar-nav-icon icon="mdi-home" to="/index"></v-app-bar-nav-icon>
-    <v-app-bar-title class="mr-10">Henlex's</v-app-bar-title>
+    <v-app-bar-title class="mr-10"><a href="#" to="/Home" style="color:#eee; text-decoration-line: none;">Henlex's</a></v-app-bar-title>
     <v-row>
       <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/shop"
         >購物</v-btn

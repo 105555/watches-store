@@ -93,7 +93,7 @@ const nylon = reactive([
     <br />
     <h3>金屬</h3>
     <br />
-    <v-row>
+    <v-row > 
       <v-col v-for="(material, index) in metal" :key="index" cols="12" md="3" target="_blank" @click.stop="">
         <v-card class="pic">
           <v-img :src="material.imagePath"></v-img>
@@ -105,7 +105,7 @@ const nylon = reactive([
       </v-col>
     </v-row>
   </v-container>
-  <v-container>
+  <v-container >
     <h3>尼龍</h3>
     <br />
     <v-row>
@@ -139,12 +139,13 @@ const nylon = reactive([
   </v-container>
 </template>
 <script>
+
 export default {
   methods: {
     navigateToItem() {
       this.$router.push({ name: 'ShopItem'});
     }
-  }
+  },
 }
 </script>
 <style lang="scss" scoped>

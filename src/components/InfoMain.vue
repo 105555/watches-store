@@ -3,11 +3,11 @@
       <h3 class="left">首頁 / 店面資訊</h3>
     <v-container>
         <v-row class="box-container">
-          <v-col cols="12" md="6" class="img-container">
+          <v-col cols="12" md="6" class="img-container"  data-aos="flip-up">
             <v-img  src="https://media.vogue.com.tw/photos/6255364cbe117cf87fa92347/master/w_1600%2Cc_limit/04A6B8AA-C88E-4D8C-BC1B-EF4B2B8A86DF.JPG"></v-img>
           </v-col>
           <v-col cols="12" md="6">
-            <v-card>
+            <v-card data-aos="flip-up"  data-aos-duration="1000">
                 <v-card-title>聯系信息</v-card-title>
                 <br>
                 <v-card-text>地址：台中市南區XXXXXXXX</v-card-text>

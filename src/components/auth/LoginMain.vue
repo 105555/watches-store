@@ -5,6 +5,8 @@
       elevation="8"
       max-width="448"
       rounded="lg"
+      data-aos="flip-left"
+      data-aos-duration="1000"
     >
       <div class="text-h4 mb-5">登入</div>
       <div class="text-subtitle-1 text-medium-emphasis">帳號</div>
