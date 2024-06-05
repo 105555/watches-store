@@ -59,9 +59,9 @@
         <br class="mb-12">
         <v-row cols="12">
           <v-col cols="5" >
-            <p class="text-h6">Henlex's 手錶保養方式</p>
-            <p class="text-h6">訂購與運送</p>
-            <p class="text-h6">服務項目</p>
+            <p class="text-h6 mb-2 d-flex align-center"><v-icon class="text-h6 pr-2" style="color:#808836">mdi-watch-export</v-icon>Henlex's 手錶保養方式</p>
+            <p class="text-h6 mb-2 d-flex align-center">訂購與運送</p>
+            <p class="text-h6 d-flex align-center">服務項目</p>
           </v-col>
           <v-col cols="7">
             <v-expansion-panels variant="Item">
@@ -80,7 +80,7 @@
             </v-expansion-panels>
             <v-expansion-panels variant="Item">
               <v-expansion-panel
-                title="售後服務"
+                title="會員制度相關說明"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
               >
               </v-expansion-panel>
@@ -88,6 +88,13 @@
             <v-expansion-panels variant="Item">
               <v-expansion-panel
                 title="產品保養與維修"
+                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
+              >
+              </v-expansion-panel>
+            </v-expansion-panels>
+            <v-expansion-panels variant="Item">
+              <v-expansion-panel
+                title="售後服務"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
               >
               </v-expansion-panel>
