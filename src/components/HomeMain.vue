@@ -25,55 +25,47 @@ onMounted(fetchImg);
 
 const metal = reactive([
   {
-    description: "SPB381",
-    imagePath:
-      "https://watchesbysjx.com/wp-content/uploads/2023/06/Seiko-King-Seiko-SJE091-black-dial-lifestyle.jpg",
+    description: 'SPB381',
+    imagePath:'../../public/img/Home_1.jpeg',
   },
   {
-    description: "SPB417",
-    imagePath:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr555qXR1EpL6d7x2L5-EZgs3Dn8U3krDptSXEW11eTA&s",
+    description: 'SPB417',
+    imagePath:'../../public/img/Home_2.jpeg'
   },
   {
-    description: "SSJ013",
-    imagePath:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHETk0rIU8Qtsd_JnyO-2b4tSNGdpL3U2nuoVyjh67-w&s",
+    description: 'SSJ013',
+    imagePath:'../../public/img/Home_3.jpeg'
   },
   {
-    description: "SJE089",
-    imagePath:
-      "https://watchesbysjx.com/wp-content/uploads/2023/06/Seiko-King-Seiko-SJE091-black-dial-lifestyle.jpg",
+    description: 'SJE089',
+    imagePath:'../../public/img/Home_1.jpeg',
   },
 ]);
 
 const leather = reactive([
   {
-    description: "SUR472",
-    imagePath: "https://cf.shopee.tw/file/sg-11134201-22100-7jwj8l1l9fiva1",
+    description: 'SUR472',
+    imagePath:'../../public/img/Home_4.jpeg',
   },
   {
-    description: "SUR461",
-    imagePath:
-      "https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2023/10/31/realtime/26713691.jpg&x=0&y=0&sw=0&sh=0&sl=W&fw=800&exp=3600&w=800",
+    description: 'SUR461',
+    imagePath:'../../public/img/Home_5.jpeg',
   },
   {
-    description: "SPB329",
-    imagePath:
-      "https://img.pchome.com.tw/cs/items/DIACOKA900FH3WQ/000001_1682995490.jpg?width=480",
+    description: 'SPB329',
+    imagePath:'../../public/img/Home_6.webp'
   },
 ]);
 
 const nylon = reactive([
   {
-    description: "SSB401",
-    imagePath:
-      "https://media.u-mall.com.tw/BBCont/003098/3098321/ffb5f497-41d2-494f-91c0-865507ad4132.jpg",
+    description: 'SSB401',
+    imagePath:'../../public/img/Home_7.jpeg'
   },
   {
-    description: "SSA426",
-    imagePath:
-      "https://media.u-mall.com.tw/BBCont/007284/7284173/ee0141cf-44d5-4ed7-a97e-35a3c6be6ddd.jpg",
-  },
+    description: 'SSA426',
+    imagePath:'../../public/img/Home_8.jpeg'
+  }
 ]);
 </script>
 
@@ -93,7 +85,7 @@ const nylon = reactive([
     <br />
     <h3>金屬</h3>
     <br />
-    <v-row > 
+    <v-row> 
       <v-col v-for="(material, index) in metal" :key="index" cols="12" md="3" target="_blank" @click.stop="">
         <v-card class="pic">
           <v-img :src="material.imagePath"></v-img>
