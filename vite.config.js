@@ -66,5 +66,14 @@ export default defineConfig({
         },
       },
     },
-},
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // 两种方式都可以
+        additionalData: '@import "@/assets/scss/all.scss";'
+        // additionalData: '@use "@/assets/scss/global.scss" as *;'
+      }
+    }
+  },
 })

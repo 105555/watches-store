@@ -81,12 +81,12 @@ const nylon = reactive([
   </v-carousel>
   <v-container>
     <br />
-    <h3>熱門款項 / 錶帶材質</h3>
+    <h3 class="ml-3 pt-10">熱門款項 / 錶帶材質</h3>
     <br />
-    <h3>金屬</h3>
+    <h3 class="ml-3" style="text-decoration: underline;">金屬</h3>
     <br />
-    <v-row> 
-      <v-col v-for="(material, index) in metal" :key="index" cols="12" md="3" target="_blank" @click.stop="">
+    <v-row class="mb-10"> 
+      <v-col v-for="(material, index) in metal" :key="index" cols="12" md="3" target="_blank" class="mr-5">
         <v-card class="pic">
           <v-img :src="material.imagePath"></v-img>
           <div class="info">
@@ -98,10 +98,10 @@ const nylon = reactive([
     </v-row>
   </v-container>
   <v-container >
-    <h3>尼龍</h3>
+    <h3 class="ml-3" style="text-decoration: underline;">尼龍</h3>
     <br />
-    <v-row>
-      <v-col v-for="(material, index) in nylon" :key="index" cols="12" md="3">
+    <v-row class="mb-10">
+      <v-col v-for="(material, index) in nylon" :key="index" cols="12" md="3" class="mr-5">
         <v-card class="pic">
           <v-img :src="material.imagePath"></v-img>
           <div class="info">
@@ -112,11 +112,11 @@ const nylon = reactive([
       </v-col>
     </v-row>
   </v-container>
-  <v-container class="pb-100">
-    <h3>皮革</h3>
+  <v-container class="pb-200">
+    <h3 class="ml-3" style="text-decoration: underline;">皮革</h3>
     <br />
     <v-row>
-      <v-col v-for="(material, index) in leather" :key="index" cols="12" md="3">
+      <v-col v-for="(material, index) in leather" :key="index" cols="12" md="3" class="mr-5">
         
           <v-card class="pic">
             <v-img :src="material.imagePath"></v-img>
@@ -140,46 +140,4 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
-.pic {
-  position: relative;
-  width: 100%;
-  float: left;
-  margin: 10px;
-  cursor: pointer;
-  .info {
-    opacity: 0;
-    position: absolute;
-    box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.3);
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center;
-    &:hover {
-      -webkit-transition: 500ms;
-      transition: opacity 0.8s ease-in-out;
-      opacity: 1;
-    }
-  }
-}
-button {
-  border: solid 1px #000;
-  color: #000;
-  background-color: #eeebeb;
-  border-radius: 8px;
-  padding: 0px 5px 0px 3px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-p {
-  color: #eae3e3;
-}
-.pb-100{
-    padding-bottom: 100px;
-}
-</style>
+

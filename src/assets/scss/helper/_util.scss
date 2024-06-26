@@ -1,0 +1,7 @@
+:root{
+    --fontWeight:100;
+    --fontSiez:4px;
+}
+.fw-4{
+    font-weight: calc(4 * var(--fontWeight));
+}

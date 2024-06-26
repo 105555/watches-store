@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import ShopMain from '@/components/ShopMain'
+import ShopMain from '@/components/page/ShopMain'
 export default{
     components:{
         ShopMain

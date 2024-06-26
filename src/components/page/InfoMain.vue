@@ -4,7 +4,7 @@
     <v-container>
         <v-row class="box-container">
           <v-col cols="12" md="6" class="img-container"  data-aos="flip-up">
-            <v-img  src="../../public/img/InfoImg.webp"></v-img>
+            <v-img  src="../../../public/img/InfoImg.webp"></v-img>
           </v-col>
           <v-col cols="12" md="6">
             <v-card data-aos="flip-up"  data-aos-duration="1000" style="background: linear-gradient(to right, #e2e2e2, #e3ede7);">
@@ -26,29 +26,8 @@
 
 <script>
 export default {
-    name:'Info',
+    name:'InfoMain',
     data(){
-        return{
-
-        }
     }
 }
 </script>
-
-<style lang="scss" scoped>
-.left {
-  margin-left: 45px;
-}
-.box-container{
-    padding-top: 30px;
-}
-.img-container{
-    width: 100%;
-    padding-bottom: 80px;
-}
-.mb-20{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: #e3ede7;
-}
-</style>

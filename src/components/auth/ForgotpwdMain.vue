@@ -1,12 +1,14 @@
 <template>
     <v-container class='bg-teal-lighten-5 fill-height pa-12' fluid>
-        <v-card max-width='512' class='ma-auto px-6 py-8 w-100'>
+        <v-card max-width='500' class='ma-auto px-6 py-8 w-100'>
             <v-form ref='form'>
-                <div class="text-center mb-6 text-h4">重設密碼</div>
-                <v-row class="align-center mb-2 mt-5">
+                <div class="mb-8 text-h4">重設密碼</div>
+                <div class="text-caption">我們會寄信給您，讓您重新設定密碼。</div>
+                <v-row class="align-center mb-1 mt-5">
                     <v-text-field label="Email..." class="mr-2" v-model="user.email"></v-text-field>
-                    <v-btn type="submit" :loading="loading" @click="resend">寄送</v-btn>
+                    <v-btn type="submit" :loading="loading" @click="resend">提交</v-btn>
                 </v-row>
+                <div class="text-h10 fw-4" style="cursor:pointer" @click.prevent="Cancle">取消</div>
                 <div v-if="emailError" class="text-red text-h7 my-n5">{{ emailError }}</div>
             </v-form>
         </v-card>
@@ -75,6 +77,9 @@ export default {
                             break;
                     }
                 })
+        },
+        Cancle(){
+            router.push({name:"Login"});
         }
 
     },

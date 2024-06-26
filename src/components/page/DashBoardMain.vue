@@ -59,9 +59,9 @@
         <br class="mb-12">
         <v-row cols="12">
           <v-col cols="5" >
-            <p class="text-h6 mb-2 d-flex align-center"><v-icon class="text-h6 pr-2" style="color:#808836">mdi-watch-export</v-icon>Henlex's 手錶保養方式</p>
-            <p class="text-h6 mb-2 d-flex align-center">訂購與運送</p>
-            <p class="text-h6 d-flex align-center">服務項目</p>
+            <p class="text-h6 mb-2 d-flex align-center" style="color:#000"><v-icon class="text-h6 pr-2" style="color:#808836">mdi-watch-export</v-icon>Henlex's 手錶保養方式</p>
+            <p class="text-h6 mb-2 d-flex align-center" style="color:#000">訂購與運送</p>
+            <p class="text-h6 d-flex align-center" style="color:#000">服務項目</p>
           </v-col>
           <v-col cols="7">
             <v-expansion-panels variant="Item">
@@ -169,37 +169,3 @@ export default {
   },
 };
 </script>
-
-<style scoped lang="scss">
-v-btn {
-  cursor: pointer;
-  width: 100%;
-}
-
-.v-row > .v-col .side {
-  border: 2px solid #000;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.v-row > .v-col:nth-child(1) .side {
-border-color: #f15151; 
-background-color: #eb8080;
-}
-
-.v-row > .v-col:nth-child(2) .side {
-border-color: #cdca27; 
-background-color: #c8d35f;
-}
-
-.v-row > .v-col:nth-child(3) .side {
-  border-color: #34b726; 
-  background-color: #95d613;
-}
-
-.v-row > .v-col:nth-child(4) .side {
-  border-color: #1f61b3; 
-  background-color: #83b7c5;
-}
-
-</style>

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import ContactMain from '@/components/ContactMain.vue'
+import ContactMain from '@/components/page/ContactMain.vue'
 export default {
   name:'ContactInfo',
   components:{

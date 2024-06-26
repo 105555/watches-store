@@ -1,5 +1,8 @@
 <template>
-  <main class="pb-16 pt-16" style="background: linear-gradient(to right, #e2e2e2, #d7f0e5);">
+  <main
+    class="pb-16 pt-16"
+    style="background: linear-gradient(to right, #e2e2e2, #d7f0e5)"
+  >
     <v-card
       class="mx-auto pa-13 pb-8"
       elevation="8"
@@ -8,47 +11,36 @@
       data-aos="flip-left"
       data-aos-duration="1000"
     >
-      <div class="text-h4 mb-5">登入</div>
-      <div class="text-subtitle-1 text-medium-emphasis">帳號</div>
+      <div class="text-h4 mb-2 text-center">登入會員</div>
+      <div class="text-center mb-16">
+        <a
+          class="fw-4 text-caption"
+          href="#"
+          rel="noopener noreferrer"
+          @click.prevent="Register()"
+        >
+          還不是會員？<span style="color: red; text-decoration: underline">
+            立即註冊 </span
+          >享 $1000 折扣 <v-icon icon="mdi-chevron-right"></v-icon>
+        </a>
+      </div>
       <v-text-field
         density="compact"
         placeholder="Email..."
-        prepend-inner-icon="mdi-email-outline"
         variant="outlined"
         v-model="user.account"
       ></v-text-field>
-      <div
-        class="text-subtitle-1 text-medium-emphasis d-flex align-center justify-space-between"
-      >
-        密碼
-        <a
-          @click.prevent="ForgotPwd()"
-          class="text-caption text-decoration-none text-blue"
-          href="#"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          忘記密碼 ?</a
-        >
-      </div>
       <v-text-field
         :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
         :type="visible ? 'password' : 'text'"
         density="compact"
-        placeholder="password..."
-        prepend-inner-icon="mdi-lock-outline"
+        placeholder="密碼..."
         variant="outlined"
         v-model="user.pwd"
         @click:append-inner="toggleVisibility"
+        @keydown.enter="loginBtn"
       ></v-text-field>
-      <v-card class="mt-2 mb-14" color="surface-variant" variant="tonal">
-        <v-card-text class="text-medium-emphasis">
-          <v-icon color="red">mdi-information</v-icon>
-          警告：錯誤三次會暫停登入 30 分鐘<br />
-          如果真的忘記密碼請立即點選忘記密碼選項
-        </v-card-text>
-      </v-card>
-      <div class="mb-10">
+      <div class="mb-3">
         <v-btn
           block
           class=""
@@ -61,14 +53,15 @@
       </div>
       <div class="text-center mb-5">
         <a
-          class="text-blue text-decoration-none"
+          @click.prevent="ForgotPwd"
+          class="text-caption"
           href="#"
           rel="noopener noreferrer"
           target="_blank"
-          @click.prevent="Register()"
+          style="text-decoration: underline"
         >
-          尚未註冊？ 註冊去 <v-icon icon="mdi-chevron-right"></v-icon>
-        </a>
+          忘記密碼 ?</a
+        >
       </div>
     </v-card>
     <!-- 提示視窗-->
@@ -113,19 +106,11 @@ export default {
       signInWithEmailAndPassword(auth, this.user.account, this.user.pwd)
         .then(() => {
           this.$nextTick(() => {
-            if (!getStatus()) {
-              this.dialogtext = "登入成功";
-              this.setLoginState(true);
-              this.isShow = true;
-              setStatus("true");
-              setTimeout(() => {
-                router.push({ name: "DashBoard" });
-              }, 500);
-            }else{
-                this.dialogtext = "您已有登入中的帳號 請登出後再嘗試";
-                this.isShow = true;
-                return
-            }
+            this.dialogtext = "登入成功";
+            this.setLoginState(true);
+            this.isShow = true;
+            setStatus("true");
+            router.push({ name: "DashBoard" });
           });
         })
         .catch((error) => {
@@ -161,5 +146,3 @@ export default {
   },
 };
 </script>
-
-<style></style>

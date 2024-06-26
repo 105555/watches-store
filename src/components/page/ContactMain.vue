@@ -74,22 +74,3 @@
     }
   };
   </script>
-  
-  <style scoped>
-  .form-container {
-    max-width: 600px; /* 設置最大寬度 */
-    margin: 0 auto; /* 將其置中 */
-    margin-top: 50px;
-  }
-  
-  .center {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .left{
-    margin-left: 45px;
-  }
-  </style>
-  

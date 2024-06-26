@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import InfoMain from '@/components/InfoMain.vue'
+import InfoMain from '@/components/page/InfoMain.vue'
 export default{
     components:{
         InfoMain

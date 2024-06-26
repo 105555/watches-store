@@ -1,0 +1,30 @@
+v-btn {
+  cursor: pointer;
+  width: 100%;
+}
+
+.v-row > .v-col .side {
+  border: 2px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.v-row > .v-col:nth-child(1) .side {
+  border-color: #f15151;
+  background-color: #eb8080;
+}
+
+.v-row > .v-col:nth-child(2) .side {
+  border-color: #cdca27;
+  background-color: #c8d35f;
+}
+
+.v-row > .v-col:nth-child(3) .side {
+  border-color: #34b726;
+  background-color: #95d613;
+}
+
+.v-row > .v-col:nth-child(4) .side {
+  border-color: #1f61b3;
+  background-color: #83b7c5;
+}

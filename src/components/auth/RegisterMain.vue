@@ -1,31 +1,31 @@
 <template>
   <v-container class="fill-height" style="background: linear-gradient(to right, #e2e2e2, #d7f0e5);" fluid >
-    <v-form v-model="form" class="mx-auto bg-white rounded-lg pa-5" max-width="344" title="註冊"  data-aos="flip-right"
+    <v-form v-model="form" class="mx-auto bg-white rounded-lg pa-10 mb-16 mt-16" max-width="800" title="註冊"  data-aos="flip-right"
     data-aos-duration="1000">
       <v-container>
-        <div class="text-h4 text-center mb-5">會員註冊</div>
-        <v-text-field v-model="user.name" color="primary" label="User name..." variant="underlined"
+        <div class="text-h4 text-center mb-5">註冊會員</div>
+        <div class="text-center  mb-8"><a href="#" @click.prevent="Login()" class="text-caption">已經是會員？ <span style="color:red; text-decoration:underline">登入</span></a></div>
+        <v-text-field v-model="user.name" color="primary" label="暱稱..." variant="underlined"
           placeholder="your username" :rules="[required]"></v-text-field>
 
         <v-text-field v-model="user.email" color="primary" label="Email..." variant="underlined"
           placeholder="your email" :rules="emailRules"></v-text-field>
 
-        <v-text-field v-model="user.pwd" color="primary" label="Password..." variant="underlined"
+        <v-text-field v-model="user.pwd" color="primary" label="密碼..." variant="underlined"
           placeholder="your password" :rules="passwordRules" :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
           :type="visible ? 'password' : 'text'" @click:append-inner="toggleVisibility"></v-text-field>
 
-        <v-text-field v-model="user.confirm" color="primary" label="Confirm Password..." :rules="confirmRules"
+        <v-text-field v-model="user.confirm" color="primary" label="密碼確認..." :rules="confirmRules"
           :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'" :type="visible ? 'password' : 'text'"
           placeholder="Re-Enter your password" variant="underlined"
           @click:append-inner="toggleVisibility"></v-text-field>
         <v-checkbox v-model="terms" color="secondary" label="I agree to site terms and conditions"
-          class="ml-n5"></v-checkbox>
+          class="ml-n5 text-caption"></v-checkbox>
       </v-container>
       <hr />
-      <v-card-actions>
+      <v-card-actions class="mt-5">
         <v-btn block class="bg-success" :disabled="!formValid" @click="register">
           註冊
-          <v-icon icon="mdi-chevron-right" end></v-icon>
         </v-btn>
       </v-card-actions>
     </v-form>
@@ -95,6 +95,9 @@ export default {
     },
     toggleVisibility() {
       this.visible = !this.visible;
+    },
+    Login(){
+      router.push( {name:"Login"} );
     }
   },
   computed: {
