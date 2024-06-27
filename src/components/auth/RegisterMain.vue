@@ -5,21 +5,21 @@
       <v-container>
         <div class="text-h4 text-center mb-5">註冊會員</div>
         <div class="text-center  mb-8"><a href="#" @click.prevent="Login()" class="text-caption">已經是會員？ <span style="color:red; text-decoration:underline">登入</span></a></div>
-        <v-text-field v-model="user.name" color="primary" label="暱稱..." variant="underlined"
+        <v-text-field v-model="user.name" color="primary" label="暱稱..." variant="underlined"  style="caret-color:pink;"
           placeholder="your username" :rules="[required]"></v-text-field>
 
-        <v-text-field v-model="user.email" color="primary" label="Email..." variant="underlined"
+        <v-text-field v-model="user.email" color="primary" label="Email..." variant="underlined"  style="caret-color:pink;"
           placeholder="your email" :rules="emailRules"></v-text-field>
 
-        <v-text-field v-model="user.pwd" color="primary" label="密碼..." variant="underlined"
+        <v-text-field v-model="user.pwd" color="primary" label="密碼..." variant="underlined"  style="caret-color:pink;"
           placeholder="your password" :rules="passwordRules" :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
           :type="visible ? 'password' : 'text'" @click:append-inner="toggleVisibility"></v-text-field>
 
-        <v-text-field v-model="user.confirm" color="primary" label="密碼確認..." :rules="confirmRules"
+        <v-text-field v-model="user.confirm" color="primary" label="密碼確認..." :rules="confirmRules"  style="caret-color:pink;"
           :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'" :type="visible ? 'password' : 'text'"
           placeholder="Re-Enter your password" variant="underlined"
           @click:append-inner="toggleVisibility"></v-text-field>
-        <v-checkbox v-model="terms" color="secondary" label="I agree to site terms and conditions"
+        <v-checkbox v-model="terms" color="secondary" label="I agree to site terms and conditions" 
           class="ml-n5 text-caption"></v-checkbox>
       </v-container>
       <hr />

@@ -1,0 +1,18 @@
+.left {
+  margin-left: 45px;
+}
+.itemData {
+  overflow: hidden;
+  text-decoration-line: none;
+  img {
+    transform: scale(1, 1);
+    transition: all 1s ease-out;
+    &:hover {
+      transform: scale(1.2, 1.2);
+    }
+  }
+}
+.text-l{
+    word-wrap: break-word;
+    text-align: left; 
+}

@@ -1,6 +1,6 @@
 <template>
   <br />
-  <h3 class="left">首頁 / 商品</h3>
+  <h3 class="left">首頁 / 全部商品 / XXXXX</h3>
   <v-container>
     <v-row class="box-container">
       <v-col cols="12" md="6" class="img-container">
@@ -79,39 +79,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.left {
-  margin-left: 45px;
-}
-.box-container {
-  padding-top: 30px;
-}
-.img-container {
-  width: 100%;
-  padding-bottom: 80px;
-}
-.mb-20 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.fz-12{
-  font-size: 12px;
-}
-.itemCount {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border: 1px solid #000;
-  display: inline-block;
-  .increase {
-    margin-left: 25px;
-    cursor: pointer;
-  }
-  .decrease {
-    margin-right: 25px;
-    cursor: pointer;
-  }
-}
-</style>

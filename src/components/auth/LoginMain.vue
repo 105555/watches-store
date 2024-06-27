@@ -1,7 +1,7 @@
 <template>
   <main
-    class="pb-16 pt-16"
-    style="background: linear-gradient(to right, #e2e2e2, #d7f0e5)"
+    class="pt-16 h-screen"
+    style="background: linear-gradient(to right, #e2e2e2, #d7f0e5);"
   >
     <v-card
       class="mx-auto pa-13 pb-8"
@@ -29,6 +29,7 @@
         placeholder="Email..."
         variant="outlined"
         v-model="user.account"
+        style="caret-color:pink;"
       ></v-text-field>
       <v-text-field
         :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
@@ -36,6 +37,7 @@
         density="compact"
         placeholder="密碼..."
         variant="outlined"
+        style="caret-color:pink;"
         v-model="user.pwd"
         @click:append-inner="toggleVisibility"
         @keydown.enter="loginBtn"

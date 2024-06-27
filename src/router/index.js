@@ -13,7 +13,7 @@ const routes = [
       {
         path: '',
         name: 'Home',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/page/Home.vue'),
       },
       
     ],
@@ -26,7 +26,7 @@ const routes = [
         path: '',
         name: 'Shop',
         meta: { title: " 商品 | Henlex's" },
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Shop.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/page/Shop.vue'),
       },
       {
         path: 'shopItem',
@@ -44,7 +44,7 @@ const routes = [
         path: '',
         name: 'StoreInfo',
         meta: { title: " 店鋪資訊 | Henlex's" },
-        component: () => import(/* webpackChunkName: "home" */ '@/views/StoreInfo.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/page/StoreInfo.vue'),
       },
       
     ],
@@ -57,7 +57,7 @@ const routes = [
         path: '',
         name: 'ContactInfo',
         meta: { title: "聯絡 | Henlex's" },
-        component: () => import(/* webpackChunkName: "home" */ '@/views/ContactInfo.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/page/ContactInfo.vue'),
       },
       
     ],
@@ -100,7 +100,7 @@ const routes = [
         path: '',
         name: 'DashBoard',
         meta: { title: " 帳戶 | Henlex's" },
-        component: () => import(/* webpackChunkName: "home" */ '@/views/DashBoard.vue'),
+        component: () => import(/* webpackChunkName: "home" */ '@/views/page/DashBoard.vue'),
       },
     ]
   }

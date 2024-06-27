@@ -1,0 +1,36 @@
+v-btn{
+    cursor: pointer;
+}
+.left {
+  margin-left: 45px;
+}
+.box-container {
+  padding-top: 30px;
+}
+.img-container {
+  width: 100%;
+  padding-bottom: 80px;
+}
+.mb-20 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.fz-12 {
+  font-size: 12px;
+}
+.itemCount {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #000;
+  display: inline-block;
+  .increase {
+    margin-left: 25px;
+    cursor: pointer;
+  }
+  .decrease {
+    margin-right: 25px;
+    cursor: pointer;
+  }
+}
