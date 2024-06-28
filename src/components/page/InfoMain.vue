@@ -1,10 +1,10 @@
 <template>
   <br>
       <h3 class="left">首頁 / 店面資訊</h3>
-    <v-container>
+    <v-container class="mb-250">
         <v-row class="box-container">
           <v-col cols="12" md="6" class="img-container"  data-aos="flip-up">
-            <v-img  src="../../../public/img/InfoImg.webp"></v-img>
+            <v-img  src="/img/InfoImg.webp"></v-img>
           </v-col>
           <v-col cols="12" md="6">
             <v-card data-aos="flip-up"  data-aos-duration="1000" style="background: linear-gradient(to right, #e2e2e2, #e3ede7);">

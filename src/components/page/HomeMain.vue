@@ -26,45 +26,45 @@ onMounted(fetchImg);
 const metal = reactive([
   {
     description: 'SPB381',
-    imagePath:'../../public/img/Home_1.jpeg',
+    imagePath:'/img/Home_1.jpeg',
   },
   {
     description: 'SPB417',
-    imagePath:'../../public/img/Home_2.jpeg'
+    imagePath:'/img/Home_2.jpeg'
   },
   {
     description: 'SSJ013',
-    imagePath:'../../public/img/Home_3.jpeg'
+    imagePath:'/img/Home_3.jpeg'
   },
   {
     description: 'SJE089',
-    imagePath:'../../public/img/Home_1.jpeg',
+    imagePath:'/img/Home_1.jpeg',
   },
 ]);
 
 const leather = reactive([
   {
     description: 'SUR472',
-    imagePath:'../../public/img/Home_4.jpeg',
+    imagePath:'/img/Home_4.jpeg',
   },
   {
     description: 'SUR461',
-    imagePath:'../../public/img/Home_5.jpeg',
+    imagePath:'/img/Home_5.jpeg',
   },
   {
     description: 'SPB329',
-    imagePath:'../../public/img/Home_6.webp'
+    imagePath:'/img/Home_6.webp'
   },
 ]);
 
 const nylon = reactive([
   {
     description: 'SSB401',
-    imagePath:'../../public/img/Home_7.jpeg'
+    imagePath:'/img/Home_7.jpeg'
   },
   {
     description: 'SSA426',
-    imagePath:'../../public/img/Home_8.jpeg'
+    imagePath:'/img/Home_8.jpeg'
   }
 ]);
 </script>
@@ -112,7 +112,7 @@ const nylon = reactive([
       </v-col>
     </v-row>
   </v-container>
-  <v-container class="pb-200">
+  <v-container class="mb-250">
     <h3 class="ml-3" style="text-decoration: underline;">皮革</h3>
     <br />
     <v-row>
@@ -131,7 +131,6 @@ const nylon = reactive([
   </v-container>
 </template>
 <script>
-
 export default {
   methods: {
     navigateToItem() {
