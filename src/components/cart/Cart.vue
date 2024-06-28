@@ -20,7 +20,7 @@
                     <div class="item">
                         <v-img
                             :src=item.img
-                            class="img"></v-img>
+                            class="imgBox"></v-img>
                         <v-text>{{ item.title }}</v-text>
                     </div>
                     <div>

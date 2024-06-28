@@ -26,45 +26,45 @@ onMounted(fetchImg);
 const metal = reactive([
   {
     description: 'SPB381',
-    imagePath:'/img/Home_1.jpeg',
+    imagePath:'/img/Home1.jpeg',
   },
   {
     description: 'SPB417',
-    imagePath:'/img/Home_2.jpeg'
+    imagePath:'/img/Home2.jpeg'
   },
   {
     description: 'SSJ013',
-    imagePath:'/img/Home_3.jpeg'
+    imagePath:'/img/Home3.jpeg'
   },
   {
     description: 'SJE089',
-    imagePath:'/img/Home_1.jpeg',
+    imagePath:'/img/Home1.jpeg',
   },
 ]);
 
 const leather = reactive([
   {
     description: 'SUR472',
-    imagePath:'/img/Home_4.jpeg',
+    imagePath:'/img/Home4.jpeg',
   },
   {
     description: 'SUR461',
-    imagePath:'/img/Home_5.jpeg',
+    imagePath:'/img/Home5.jpeg',
   },
   {
     description: 'SPB329',
-    imagePath:'/img/Home_6.webp'
+    imagePath:'/img/Home6.webp'
   },
 ]);
 
 const nylon = reactive([
   {
     description: 'SSB401',
-    imagePath:'/img/Home_7.jpeg'
+    imagePath:'/img/Home7.jpeg'
   },
   {
     description: 'SSA426',
-    imagePath:'/img/Home_8.jpeg'
+    imagePath:'/img/Home8.jpeg'
   }
 ]);
 </script>
