@@ -13,7 +13,7 @@ async function fetchImg() {
       "https://api.unsplash.com/photos/?client_id=dD3MhsFtrsZzl0-OLQLzCY-qKnG-UpNsn4Fv2oQKhWU"
     );
     const photoData = res.data;
-    // console.log(photoData);
+  
     items.value = photoData.map((item) => ({ imagePath: item.urls.regular }));
     loading.value = false;
   } catch (error) {
@@ -26,47 +26,52 @@ onMounted(fetchImg);
 const metal = reactive([
   {
     description: 'SPB381',
-    imagePath:'/img/Home1.jpeg',
+    imageName:'Home1.jpeg',
   },
   {
     description: 'SPB417',
-    imagePath:'/img/Home2.jpeg'
+    imageName:'Home2.jpeg'
   },
   {
     description: 'SSJ013',
-    imagePath:'/img/Home3.jpeg'
+    imageName:'Home3.jpeg'
   },
   {
     description: 'SJE089',
-    imagePath:'/img/Home1.jpeg',
+    imageName:'Home1.jpeg',
   },
 ]);
 
 const leather = reactive([
   {
     description: 'SUR472',
-    imagePath:'/img/Home4.jpeg',
+    imageName:'Home4.jpeg',
   },
   {
     description: 'SUR461',
-    imagePath:'/img/Home5.jpeg',
+    imageName:'Home5.jpeg',
   },
   {
     description: 'SPB329',
-    imagePath:'/img/Home6.webp'
+    imageName:'Home6.webp'
   },
 ]);
 
 const nylon = reactive([
   {
     description: 'SSB401',
-    imagePath:'/img/Home7.jpeg'
+    imageName:'Home7.jpeg'
   },
   {
     description: 'SSA426',
-    imagePath:'/img/Home8.jpeg'
+    imageName:'Home8.jpeg'
   }
 ]);
+function getImageUrl(name) {
+    return `/img/${name}`;
+}
+
+
 </script>
 
 <template>
@@ -88,7 +93,7 @@ const nylon = reactive([
     <v-row class="mb-10"> 
       <v-col v-for="(material, index) in metal" :key="index" cols="12" md="3" target="_blank" class="mr-5">
         <v-card class="pic">
-          <v-img :src="material.imagePath"></v-img>
+          <v-img :src="getImageUrl(material.imageName)"></v-img>
           <div class="info">
             <button class="mb-1" @click.stop='navigateToItem'>View More</button>
             <p>{{ material.description }}</p>
@@ -103,7 +108,7 @@ const nylon = reactive([
     <v-row class="mb-10">
       <v-col v-for="(material, index) in nylon" :key="index" cols="12" md="3" class="mr-5">
         <v-card class="pic">
-          <v-img :src="material.imagePath"></v-img>
+          <v-img :src="getImageUrl(material.imageName)"></v-img>
           <div class="info">
               <button class="mb-1" @click.stop='navigateToItem'>View More</button>
             <p>{{ material.description }}</p>
@@ -119,7 +124,7 @@ const nylon = reactive([
       <v-col v-for="(material, index) in leather" :key="index" cols="12" md="3" class="mr-5">
         
           <v-card class="pic">
-            <v-img :src="material.imagePath"></v-img>
+            <v-img  :src="getImageUrl(material.imageName)"></v-img>
             <div class="info">
               <button class="mb-2" @click.stop='navigateToItem'>View More</button>
               <p>{{ material.description }}</p>
