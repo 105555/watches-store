@@ -38,7 +38,7 @@ npm build
 
 ## 專案概述
 - 登入處理使用 `Firebase` 
-- 使用 `Vuex` 管理購物車系統
+- 使用 `Vuex` 管理購物車系統 暫無後端資料庫
 - UI 框架使用 `Vuetify`
 
 ## 功能特性
