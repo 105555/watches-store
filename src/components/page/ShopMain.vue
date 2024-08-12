@@ -1,7 +1,11 @@
 <template>
   <div>
     <br />
-    <h3 class="left">首頁 / 全部商品</h3>
+    <v-breadcrumbs :items="items">
+      <template v-slot:prepend>
+        <v-icon icon="vuetify"></v-icon>
+      </template>
+    </v-breadcrumbs>
     <br />
     <v-container>
       <v-row>
@@ -28,8 +32,14 @@
                 </router-link>
               </div>
               <div class="d-flex flex-column justify-end pr-4">
-                <v-btn class="mb-7 textAdd" @click.prevent="addToCart(item)">+加入<v-icon>mdi-shopping-outline</v-icon></v-btn>
+
+
+                <v-btn class="mb-7 textAdd"
+                  @click.prevent="addToCart(item)">+加入<v-icon>mdi-shopping-outline</v-icon></v-btn>
               </div>
+              <v-snackbar v-model="snackbar" :timeout="1500" color="success">
+                <div class="text-center">{{ snackbarText }}</div>
+              </v-snackbar>
             </div>
           </v-card>
         </v-col>
@@ -41,18 +51,38 @@
 </template>
 
 <script>
-import { mapState,mapMutations } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 export default {
   data() {
     return {
       search: '',
       page: 1,
       maxitem: 12,
-    };
+      snackbar: false,
+      snackbarText: '',
+      items: [
+        {
+          title: '首頁',
+          disabled: false,
+          href:''
+
+        },
+        {
+          title: '商品',
+          disabled: true,
+          href: '',
+        }
+      ],
+    }
   },
-  methods:{
-    addToCart(item){
+  methods: {
+    addToCart(item) {
       this.addItem(item);
+      this.showSnackbar(`${item.title} 已成功加入購物車`);
+    },
+    showSnackbar(text) {
+      this.snackbarText = text;
+      this.snackbar = true;
     },
     ...mapMutations("cart", ["addItem"])
   },

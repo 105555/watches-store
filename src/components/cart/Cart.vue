@@ -18,15 +18,13 @@
                     class="d-flex justify-space-between align-center item_border mb-2 text-caption"
                     style="background: #fff">
                     <div class="item">
-                        <v-img
-                            :src=item.img
-                            class="imgBox"></v-img>
+                        <v-img :src=item.img class="imgBox"></v-img>
                         <v-text>{{ item.title }}</v-text>
                     </div>
                     <div>
                         <span>${{ item.prices }}</span>
                     </div>
-                    <div class="count d-flex">
+                    <div class="count d-flex justify-center align-center">
                         <button @click="decrease(item)">–</button>
                         <span>{{ item.count }}</span>
                         <button @click="increase(item)">＋</button>
@@ -36,10 +34,13 @@
                             style="cursor: pointer">mdi-delete</v-icon></v-text>
                 </div>
                 <div v-if="this.cartItem.length === 0" class="d-flex justify-center align-end" style="color: #666">
-                   <v-icon>mdi-shopping-outline</v-icon> 您購物車目前是空的
+                    <v-icon>mdi-shopping-outline</v-icon> 您購物車目前是空的
                 </div>
             </div>
         </section>
+        <v-snackbar v-model="snackbar" :timeout="1500" color="red-darken-2">
+            <div class="text-center">{{ snackbarText }}</div>
+        </v-snackbar>
         <section class="d-flex justify-space-between line">
             <div>
                 <v-text class="fw-4 l-space">( {{ totalCount }}項商品 )</v-text>
@@ -66,6 +67,8 @@ export default {
         return {
             isCartOpen: false,
             discount: "滿 NT$5000即享免運",
+            snackbar: false,
+            snackbarText: '',
         };
     },
     expose: ["showCart"],
@@ -80,6 +83,11 @@ export default {
         },
         handledelete(index) {
             this.cartItem.splice(index, 1);
+            this.showSnackbar(`商品已移除`);
+        },
+        showSnackbar(text) {
+            this.snackbarText = text;
+            this.snackbar = true;
         },
         hideCart() {
             let selector = document.querySelector(".cartContainer");
@@ -98,7 +106,7 @@ export default {
             selector.style.right = "0px";
             this.isCartOpen = true;
         },
-        ...mapMutations("cart",['removeItem'])
+        ...mapMutations("cart", ['removeItem'])
     },
     computed: {
         totalCount() {
