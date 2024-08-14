@@ -32,12 +32,15 @@ importers:
       vue:
         specifier: ^3.2.0
         version: 3.4.31
+      vue-i18n:
+        specifier: 10.0.0-beta.5
+        version: 10.0.0-beta.5(vue@3.4.31)
       vue-router:
         specifier: ^4.0.0
         version: 4.4.0(vue@3.4.31)
       vuetify:
         specifier: ^3.0.0
-        version: 3.6.11(vite-plugin-vuetify@1.0.2)(vue@3.4.31)
+        version: 3.6.11(vite-plugin-vuetify@1.0.2)(vue-i18n@10.0.0-beta.5(vue@3.4.31))(vue@3.4.31)
       vuex:
         specifier: ^4.0.2
         version: 4.1.0(vue@3.4.31)
@@ -450,6 +453,18 @@ packages:
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     deprecated: Use @eslint/object-schema instead
+
+  '@intlify/core-base@10.0.0-beta.5':
+    resolution: {integrity: sha512-XWLOYbHz5QMJ1lGxjnSr3lTLB+kJqEaf507NCnqAG2X0Ffz/W6h/o7dDlvsPZ668FhnAlXc2/eQzqq5kC+NF6g==}
+    engines: {node: '>= 16'}
+
+  '@intlify/message-compiler@10.0.0-beta.5':
+    resolution: {integrity: sha512-hLLchnM1dmtSEruerkzvU9vePsLqBXz3RU85SCx/Vd12fFQiymP+/5Rn9MJ8MyfLmIOLDEx4PRh+/GkIQP6oog==}
+    engines: {node: '>= 16'}
+
+  '@intlify/shared@10.0.0-beta.5':
+    resolution: {integrity: sha512-g9bq5Y1bOcC9qxtNk4UWtF3sXm6Wh0fGISb7vD5aLyF7yQv7ZFjxQjJzBP2GqG/9+PAGYutqjP1GGadNqFtyAQ==}
+    engines: {node: '>= 16'}
 
   '@jridgewell/sourcemap-codec@1.4.15':
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
@@ -1258,6 +1273,12 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
+  vue-i18n@10.0.0-beta.5:
+    resolution: {integrity: sha512-P5TUo4Ux/NgQLP1OGGRnHGxkh3CPiUt4W2RcDUeoYj+26GGz9H736DY3gw5fyFdiNT9JSXhuLK7yB49pk062Yw==}
+    engines: {node: '>= 16'}
+    peerDependencies:
+      vue: ^3.0.0
+
   vue-router@4.4.0:
     resolution: {integrity: sha512-HB+t2p611aIZraV2aPSRNXf0Z/oLZFrlygJm+sZbdJaW6lcFqEDQwnzUBXn+DApw+/QzDU/I9TeWx9izEjTmsA==}
     peerDependencies:
@@ -1790,6 +1811,18 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.3': {}
 
+  '@intlify/core-base@10.0.0-beta.5':
+    dependencies:
+      '@intlify/message-compiler': 10.0.0-beta.5
+      '@intlify/shared': 10.0.0-beta.5
+
+  '@intlify/message-compiler@10.0.0-beta.5':
+    dependencies:
+      '@intlify/shared': 10.0.0-beta.5
+      source-map-js: 1.2.0
+
+  '@intlify/shared@10.0.0-beta.5': {}
+
   '@jridgewell/sourcemap-codec@1.4.15': {}
 
   '@mdi/font@7.0.96': {}
@@ -1896,12 +1929,12 @@ snapshots:
 
   '@vue/shared@3.4.31': {}
 
-  '@vuetify/loader-shared@1.7.1(vue@3.4.31)(vuetify@3.6.11(vite-plugin-vuetify@1.0.2)(vue@3.4.31))':
+  '@vuetify/loader-shared@1.7.1(vue@3.4.31)(vuetify@3.6.11(vite-plugin-vuetify@1.0.2)(vue-i18n@10.0.0-beta.5(vue@3.4.31))(vue@3.4.31))':
     dependencies:
       find-cache-dir: 3.3.2
       upath: 2.0.1
       vue: 3.4.31
-      vuetify: 3.6.11(vite-plugin-vuetify@1.0.2)(vue@3.4.31)
+      vuetify: 3.6.11(vite-plugin-vuetify@1.0.2)(vue-i18n@10.0.0-beta.5(vue@3.4.31))(vue@3.4.31)
 
   acorn-jsx@5.3.2(acorn@8.12.1):
     dependencies:
@@ -2582,12 +2615,12 @@ snapshots:
 
   vite-plugin-vuetify@1.0.2(vite@4.5.3(@types/node@20.14.10)(sass@1.77.6))(vue@3.4.31)(vuetify@3.6.11):
     dependencies:
-      '@vuetify/loader-shared': 1.7.1(vue@3.4.31)(vuetify@3.6.11(vite-plugin-vuetify@1.0.2)(vue@3.4.31))
+      '@vuetify/loader-shared': 1.7.1(vue@3.4.31)(vuetify@3.6.11(vite-plugin-vuetify@1.0.2)(vue-i18n@10.0.0-beta.5(vue@3.4.31))(vue@3.4.31))
       debug: 4.3.5
       upath: 2.0.1
       vite: 4.5.3(@types/node@20.14.10)(sass@1.77.6)
       vue: 3.4.31
-      vuetify: 3.6.11(vite-plugin-vuetify@1.0.2)(vue@3.4.31)
+      vuetify: 3.6.11(vite-plugin-vuetify@1.0.2)(vue-i18n@10.0.0-beta.5(vue@3.4.31))(vue@3.4.31)
     transitivePeerDependencies:
       - supports-color
 
@@ -2614,6 +2647,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  vue-i18n@10.0.0-beta.5(vue@3.4.31):
+    dependencies:
+      '@intlify/core-base': 10.0.0-beta.5
+      '@intlify/shared': 10.0.0-beta.5
+      '@vue/devtools-api': 6.6.3
+      vue: 3.4.31
+
   vue-router@4.4.0(vue@3.4.31):
     dependencies:
       '@vue/devtools-api': 6.6.3
@@ -2627,11 +2667,12 @@ snapshots:
       '@vue/server-renderer': 3.4.31(vue@3.4.31)
       '@vue/shared': 3.4.31
 
-  vuetify@3.6.11(vite-plugin-vuetify@1.0.2)(vue@3.4.31):
+  vuetify@3.6.11(vite-plugin-vuetify@1.0.2)(vue-i18n@10.0.0-beta.5(vue@3.4.31))(vue@3.4.31):
     dependencies:
       vue: 3.4.31
     optionalDependencies:
       vite-plugin-vuetify: 1.0.2(vite@4.5.3(@types/node@20.14.10)(sass@1.77.6))(vue@3.4.31)(vuetify@3.6.11)
+      vue-i18n: 10.0.0-beta.5(vue@3.4.31)
 
   vuex@4.1.0(vue@3.4.31):
     dependencies:
