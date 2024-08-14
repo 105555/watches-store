@@ -1,27 +1,33 @@
 <template>
-  <v-app-bar class="px-1" style="background:linear-gradient(to right, #1a6040, #197149); color:#eee">
-    <v-app-bar-nav-icon icon="mdi-home" to="/index"></v-app-bar-nav-icon>
-    <v-app-bar-title class="mr-10"><a href="#" to="/Home"
-        style="color:#eee; text-decoration-line: none;">Henlex's</a></v-app-bar-title>
-    <v-row class="d-xl-none d-xl-flex justify-center">
-      <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/shop">購物</v-btn>
-      <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/storeInfo">店面資訊</v-btn>
-      <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/contactInfo">聯絡我們</v-btn>
-    </v-row>
-    <v-row class="d-md-none d-md-flex justify-center">
-      <v-menu>
-        <template v-slot:activator="{ props }">
-          <v-icon v-bine="props">ttttttt</v-icon>
-        </template>
-        <v-list>
-          <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/shop">購物</v-btn>
-          <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/storeInfo">店面資訊</v-btn>
-          <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/contactInfo">聯絡我們</v-btn>
-        </v-list>
+  <v-app-bar
+    class="px-1"
+    style="background: linear-gradient(to right, #1a6040, #197149); color: #eee"
+  >
+    <!--手機尺寸-->
+    <v-app-bar-nav-icon
+      class="d-md-none"
+      variant="text"
+      @click.stop="drawer = !drawer"
+    ></v-app-bar-nav-icon>
 
-      </v-menu>
-      <Cart ref="cartComponentRef" />
+    <!--大尺寸菜單-->
+    <v-app-bar-title class="mr-10"
+      ><a href="#" to="/Home" style="color: #eee; text-decoration-line: none">Henlex's</a>
+    </v-app-bar-title>
+    <v-row class="d-none d-md-flex justify-xl-center align-center flex-grow-1">
+      <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/shop"
+        >購物</v-btn
+      >
+      <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/storeInfo"
+        >店面資訊</v-btn
+      >
+      <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/contactInfo"
+        >聯絡我們</v-btn
+      >
     </v-row>
+
+    <Cart ref="cartComponentRef" />
+
     <div class="cartBox">
       <span class="cartCount fw-400">{{ totalCount }}</span>
       <v-btn class="mx-3" icon="mdi-cart-outline" @click="toggleCart"></v-btn>
@@ -38,7 +44,9 @@
       <v-card>
         <v-card-text>
           <div class="mx-auto text-center d-flex flex-column">
-            <v-btn v-if="loginState === false" rounded variant="text" to="/Register"> 註冊 </v-btn>
+            <v-btn v-if="loginState === false" rounded variant="text" to="/Register">
+              註冊
+            </v-btn>
             <v-btn v-else rounded variant="text" to="/Dashboard"> 我的帳戶 </v-btn>
             <hr class="mt-2 mb-2" />
             <v-btn v-if="loginState === false" rounded variant="text" to="/login">
@@ -48,50 +56,95 @@
           </div>
         </v-card-text>
       </v-card>
+
       <!-- 提示視窗-->
-      <v-dialog v-model="isShow" max-width="350px" transition="dialog-top-transition" class="mt-n16">
+      <v-dialog
+        v-model="isShow"
+        max-width="350px"
+        transition="dialog-top-transition"
+        class="mt-n16"
+      >
         <div class="text-center">
           <v-card>
             <div class="mt-7 mb-5">
               <div>{{ dialogtext }}</div>
             </div>
-            <v-card-actions class="mb-3 d-flex  justify-center tonal">
-              <v-btn text="確認" @click.stop="logout" color="#5865f2" variant="flat"></v-btn>
-              <v-btn text="取消" @click="isShow = false" color="#5865f2" variant="flat"></v-btn>
+            <v-card-actions class="mb-3 d-flex justify-center tonal">
+              <v-btn
+                text="確認"
+                @click.stop="logout"
+                color="#5865f2"
+                variant="flat"
+              ></v-btn>
+              <v-btn
+                text="取消"
+                @click="isShow = false"
+                color="#5865f2"
+                variant="flat"
+              ></v-btn>
             </v-card-actions>
           </v-card>
         </div>
       </v-dialog>
     </v-menu>
   </v-app-bar>
+
+  <!--手機平板-->
+  <v-navigation-drawer v-model="drawer" temporary>
+    <v-list>
+      <v-list-item to="/shop" title="購物"></v-list-item>
+      <v-list-item to="/storeInfo" title="店面資訊"></v-list-item>
+      <v-list-item to="/contactInfo" title="聯絡我們"></v-list-item>
+    </v-list>
+  </v-navigation-drawer>
 </template>
 
 <script>
 import { mapState, mapMutations } from "vuex";
-import { auth } from "@/plugins/firebase"
+import { auth } from "@/plugins/firebase";
 import { signOut, onAuthStateChanged } from "firebase/auth";
-import { setStatus, getStatus } from '@/plugins/localStorage'
-import router from '@/router'
+import { setStatus, getStatus } from "@/plugins/localStorage";
+import router from "@/router";
 import Cart from "@/components/cart/Cart.vue";
 export default {
   name: "AppBar",
   components: {
-    Cart
+    Cart,
   },
-  emits: ['showCart'],
+  emits: ["showCart"],
   data() {
     return {
       isShow: false,
-      dialogtext: '',
+      dialogtext: "",
       count: 1,
       status: true,
-      itemCount: 0
+      itemCount: 0,
+      drawer: false,
+      droup: null,
+      items: [
+        {
+          title: "Foo",
+          value: "foo",
+        },
+        {
+          title: "Bar",
+          value: "bar",
+        },
+        {
+          title: "Fizz",
+          value: "fizz",
+        },
+        {
+          title: "Buzz",
+          value: "buzz",
+        },
+      ],
     };
   },
   methods: {
     showDialog() {
       this.isShow = true;
-      this.dialogtext = '是否登出？';
+      this.dialogtext = "是否登出？";
     },
     logout() {
       signOut(auth).then(() => {
@@ -99,8 +152,8 @@ export default {
         this.setUser(null);
         this.setLoginState(false);
         setStatus("false");
-        router.push({ name: 'Home' });
-      })
+        router.push({ name: "Home" });
+      });
     },
     checkUserAuth() {
       onAuthStateChanged(auth, (user) => {
@@ -110,7 +163,7 @@ export default {
           this.user = {};
           this.setLoginState(false);
         }
-      })
+      });
     },
     toggleCart() {
       // 記得引入子組件需要上 ref
@@ -132,7 +185,12 @@ export default {
   },
   mounted() {
     this.checkUserAuth();
-  }
+  },
+  watch: {
+    group() {
+      this.drawer = false;
+    },
+  },
 };
 </script>
 

@@ -1,15 +1,16 @@
-<template> <!--初始介面 view套元件-->
+<template>
+  <!--初始介面 view套元件-->
   <v-app>
     <default-bar />
     <default-view />
-    <ScrollTop /> 
+    <ScrollTop />
     <default-footer />
   </v-app>
 </template>
 
 <script setup>
-  import DefaultBar from './AppBar.vue'
-  import DefaultView from './View.vue'
-  import DefaultFooter from '@/layouts/default/Footer.vue'
-  import ScrollTop from '@/components/scroll/ScrollTop.vue'
+import DefaultBar from "./AppBar.vue";
+import DefaultView from "./View.vue";
+import DefaultFooter from "@/layouts/default/Footer.vue";
+import ScrollTop from "@/components/scroll/ScrollTop.vue";
 </script>

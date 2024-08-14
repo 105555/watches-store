@@ -1,16 +1,15 @@
 <template>
- <Contact-Main></Contact-Main>
+  <Contact-Main></Contact-Main>
 </template>
 
 <script>
-import ContactMain from '@/components/page/ContactMain.vue'
+import ContactMain from "@/components/page/ContactMain.vue";
 export default {
-  name:'ContactInfo',
-  components:{
+  name: "ContactInfo",
+  components: {
     ContactMain,
-  }
+  },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -1,12 +1,12 @@
 <template>
   <main
-    class="pt-16 h-screen"
-    style="background: linear-gradient(to right, #e2e2e2, #d7f0e5);"
+    class="pa-6 pt-16 fill-height"
+    style="background: linear-gradient(to right, #e2e2e2, #d7f0e5)"
   >
     <v-card
       class="mx-auto pa-13 pb-8"
       elevation="8"
-      max-width="448"
+      :max-width="400"
       rounded="lg"
       data-aos="flip-left"
       data-aos-duration="1000"
@@ -29,7 +29,7 @@
         placeholder="Email..."
         variant="outlined"
         v-model="user.account"
-        style="caret-color:pink;"
+        style="caret-color: pink"
       ></v-text-field>
       <v-text-field
         :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
@@ -37,7 +37,7 @@
         density="compact"
         placeholder="密碼..."
         variant="outlined"
-        style="caret-color:pink;"
+        style="caret-color: pink"
         v-model="user.pwd"
         @click:append-inner="toggleVisibility"
         @keydown.enter="loginBtn"
@@ -146,5 +146,15 @@ export default {
     },
     ...mapMutations("user", ["setUser", "setLoginState"]),
   },
+  computed:{
+    dynamicWidth(){
+      switch (this.$vuetify.display.name) {
+        case "xs":
+          return 300; 
+        default:
+          return 400;
+      }
+    }
+  }
 };
 </script>
