@@ -1,5 +1,5 @@
 # 購物網站
-![Static Badge](https://img.shields.io/badge/Vue-v3-green) ![Static Badge](https://img.shields.io/badge/Node-v21.6.2-blue) ![Static Badge](https://img.shields.io/badge/Vite-green) ![Static Badge](https://img.shields.io/badge/Vuetify-blue)
+![Static Badge](https://img.shields.io/badge/Vue-green) ![Static Badge](https://img.shields.io/badge/Vuetify-blue) ![Static Badge](https://img.shields.io/badge/Vite-green) ![Static Badge](https://img.shields.io/badge/Node-v21.6.2-blue)  ![Static Badge](https://img.shields.io/badge/pnpm-9.7.0-orange)
 ## 資料夾架構
  - public # 圖片放置處
  - src # 原始碼放置處
@@ -13,20 +13,20 @@
     
 ## 指令
 
-### npm
+### pnpm
 - 初次下載專案需下此指令
 ```
-npm i 
+pnpm i 
 ```
 
 - 啟動本地端
 ```
-npm run dev 
+pnpm run dev 
 ```
 
 - 打包專案
 ```
-npm build 
+pnpm build 
 ```
 
 ## 技術棧
@@ -44,6 +44,12 @@ npm build
 ## 功能特性
 -	購物車功能：用戶可以添加、刪除、更新購物車內的商品。
 -	產品搜尋功能：用戶可以通過關鍵詞搜尋產品。
+-   多語系： 支援繁體中文 / 英文 (僅加入部分)。
+
+## Firebase 配置
+-   複製 firebase.example 為 firebase.js
+-   xxx 更改為 firebase 專案名稱
+-   其餘空白處填入專案相關資訊
 
 ## 部署流程
 - `npm build` 生成 **dist 資料夾**
