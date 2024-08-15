@@ -39,12 +39,12 @@ export default {
     return {
       items: [
         {
-          title: "首頁",
+          title: this.$t('Home'),
           disabled: false,
           href: "",
         },
         {
-          title: "店面資訊",
+          title: this.$t('StoreInfomation'),
           disabled: true,
           href: "",
         },

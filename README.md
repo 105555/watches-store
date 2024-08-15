@@ -6,6 +6,7 @@
     - assets # 圖片及css放置處
     - components # 元件放置處
     - layouts # 基礎頁面呈現配置放置處
+    - locales # i18n
     - plugins # 三方外掛
     - router # 路由管理
     - store # vuex管理放置
@@ -32,6 +33,7 @@ pnpm build
 ## 技術棧
 -	前端：Vue 3、Vuetify、Vite
 -	狀態管理：Vuex
+-   多語系: Vue@i18n
 -	路由管理：Vue Router
 -	後端服務：Firebase Authentication
 -	建構工具：Vite
@@ -44,7 +46,7 @@ pnpm build
 ## 功能特性
 -	購物車功能：用戶可以添加、刪除、更新購物車內的商品。
 -	產品搜尋功能：用戶可以通過關鍵詞搜尋產品。
--   多語系： 支援繁體中文 / 英文 (僅加入部分)。
+-   多語系： 支援繁體中文 / 英文 (未完成全部)。
 
 ## Firebase 配置
 -   複製 firebase.example 為 firebase.js
@@ -52,7 +54,7 @@ pnpm build
 -   其餘空白處填入專案相關資訊
 
 ## 部署流程
-- `npm build` 生成 **dist 資料夾**
+- `pnpm build` 生成 **dist 資料夾**
 
 - `git add dist -f` 加入 dist 資料夾
 
