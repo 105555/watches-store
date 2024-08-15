@@ -23,7 +23,7 @@
         <div class="mt-6">{{ product.price }}</div>
         <div class="mt-6">{{ product.notice[1] }}</div>
         <v-card class="mt-12 pt-6 pl-6 pr-6 pb-6">
-          <v-title class="text-h6">手錶介紹</v-title>
+          <v-title class="text-h6">{{ $t('Introduce') }}</v-title>
           <br />
           <br />
           <v-text class="mb">{{ product.description }}</v-text>
@@ -33,7 +33,7 @@
             <li>{{ item.name }}</li>
           </ul>
         </v-card>
-        <div class="mt-12">數量</div>
+        <div class="mt-12">{{ $t('Count') }}</div>
         <div class="mt-6 itemCount text-h6">
           <span class="decrease" @click="decreaseCount">-</span>
           {{ count }}
@@ -44,16 +44,16 @@
         </div>
         <div class="mt-6 d-flex justify-space-between">
           <v-btn color="error" width="48%" variant="flat" @click.stop="addToCart(item)"
-            >加入購物車</v-btn
+            >加入{{ $t('Cart') }}</v-btn
           >
-          <v-btn color="success" width="48%" variant="outlined">立即購買</v-btn>
+          <v-btn color="success" width="48%" variant="outlined">{{ $t('Buy') }}</v-btn>
           <v-snackbar v-model="snackbar" :timeout="1500" color="success">
             <div class="text-center">{{ snackbarText }}</div>
           </v-snackbar>
         </div>
         <div class="mt-12 text-center mb-12" style="color: #0d47a1">
           <v-icon>mdi-car</v-icon>
-          台灣購物單筆訂單滿NT$1200，免配送費
+            {{ $t('Notice') }}
         </div>
       </v-col>
     </v-row>

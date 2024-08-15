@@ -15,7 +15,7 @@
           hide-details
           hide-no-data
           hide-selected
-          label="問題"
+          :label="$t('Question')"
           :multiple="false"
           single-line
         ></v-autocomplete>
@@ -23,26 +23,26 @@
         <v-text-field
           v-model="subject"
           hide-details
-          label="Email"
+          :label="$t('Email')"
           single-line
         ></v-text-field>
         <v-divider></v-divider>
         <v-text-field
           v-model="title"
           hide-details
-          label="標題"
+          :label="$t('Head')"
           single-line
         ></v-text-field>
         <v-divider></v-divider>
         <v-textarea
           v-model="message"
           counter
-          label="訊息"
+          :label="$t('Message')"
           maxlength="120"
           single-line
         ></v-textarea>
         <div class="center">
-          <v-btn color="primary" type="submit">送出</v-btn>
+          <v-btn color="primary" type="submit">{{ $t('Send') }}</v-btn>
         </div>
         <br />
       </v-form>
@@ -55,19 +55,19 @@ export default {
   name: "ContactInfo",
   data() {
     return {
-      selected: "問題",
+      selected: this.$t('Question'),
       subject: "",
       title: "",
       message: "",
-      contactItems: ["退貨換貨", "回饋金", "會員資格"],
+      contactItems: [this.$t('ReturnOrexchange'), this.$t('RebateMoney'), this.$t('Membership')],
       items: [
         {
-          title: "首頁",
+          title: this.$t('Home'),
           disabled: false,
           href: "",
         },
         {
-          title: "聯絡我們",
+          title: this.$t('Contact'),
           disabled: true,
           href: "",
         },
@@ -84,7 +84,7 @@ export default {
       }
     },
     clearForm() {
-      this.selected = "問題";
+      this.selected = this.$t('Question');
       this.subject = "";
       this.title = "";
       this.message = "";

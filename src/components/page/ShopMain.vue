@@ -48,13 +48,13 @@
                     item.description
                   }}</v-card-subtitle>
                   <v-card-subtitle class="pb-7 mt-3 pl-6 text-l" style="color: #000"
-                    >定價: ${{ item.prices }}</v-card-subtitle
+                    >{{ `${$t('Price')} $${item.prices}` }}</v-card-subtitle
                   >
                 </router-link>
               </div>
               <div class="d-flex flex-column justify-end pr-4">
                 <v-btn class="mb-7 textAdd" @click.prevent="addToCart(item)"
-                  >+加入<v-icon>mdi-shopping-outline</v-icon></v-btn
+                  >+{{ $t('Add') }}<v-icon>mdi-shopping-outline</v-icon></v-btn
                 >
               </div>
               <v-snackbar v-model="snackbar" :timeout="1500" color="success">
@@ -86,12 +86,12 @@ export default {
       snackbarText: "",
       items: [
         {
-          title: "首頁",
+          title: this.$t('Home'),
           disabled: false,
           href: "",
         },
         {
-          title: "商品",
+          title: this.$t('Item'),
           disabled: true,
           href: "",
         },

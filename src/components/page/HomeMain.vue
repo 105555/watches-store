@@ -91,7 +91,7 @@ function getImageUrl(name) {
   </v-carousel>
   <v-container>
     <br />
-    <h3 class="ml-3" style="text-decoration: underline">金屬</h3>
+    <h3 class="ml-3" style="text-decoration: underline">{{ $t('Metal') }}</h3>
     <br />
     <v-row class="mb-10">
       <v-col
@@ -114,7 +114,7 @@ function getImageUrl(name) {
     </v-row>
   </v-container>
   <v-container>
-    <h3 class="ml-3" style="text-decoration: underline">尼龍</h3>
+    <h3 class="ml-3" style="text-decoration: underline">{{ $t('Nylon') }}</h3>
     <br />
     <v-row class="mb-10">
       <v-col v-for="(material, index) in nylon" :key="index" cols="11" md="3" sm="4">
@@ -129,7 +129,7 @@ function getImageUrl(name) {
     </v-row>
   </v-container>
   <v-container class="mb-250">
-    <h3 class="ml-3" style="text-decoration: underline">皮革</h3>
+    <h3 class="ml-3" style="text-decoration: underline">{{ $t('Leather') }}</h3>
     <br />
     <v-row>
       <v-col v-for="(material, index) in leather" :key="index" cols="11" md="3" sm="4">

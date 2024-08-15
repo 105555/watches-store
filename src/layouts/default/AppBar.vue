@@ -16,13 +16,13 @@
     </v-app-bar-title>
     <v-row class="d-none d-md-flex justify-xl-center align-center flex-grow-1">
       <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/shop"
-        >購物</v-btn
+        >{{ $t('Shop') }}</v-btn
       >
       <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/storeInfo"
-        >店面資訊</v-btn
+        >{{ $t('StoreInfomation') }}</v-btn
       >
       <v-btn color="block" variant="text" class="mx-2" rounded="xl" to="/contactInfo"
-        >聯絡我們</v-btn
+        >{{ $t('Contact') }}</v-btn
       >
     </v-row>
 
@@ -45,12 +45,12 @@
         <v-card-text>
           <div class="mx-auto text-center d-flex flex-column">
             <v-btn v-if="loginState === false" rounded variant="text" to="/Register">
-              註冊
+             {{ $t('Register') }}
             </v-btn>
             <v-btn v-else rounded variant="text" to="/Dashboard"> 我的帳戶 </v-btn>
             <hr class="mt-2 mb-2" />
             <v-btn v-if="loginState === false" rounded variant="text" to="/login">
-              登入
+              {{ $t('Login') }}
             </v-btn>
             <v-btn v-else rounded variant="text" @click.stop="showDialog"> 登出 </v-btn>
           </div>

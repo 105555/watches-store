@@ -3,7 +3,7 @@
   <div class="cartContainer">
     <section>
       <div class="mt-3 d-flex justify-space-between align-center">
-        <v-text class="text-h4 ml-3">購物車</v-text>
+        <span class="text-h4 ml-3">{{ $t("Cart") }}</span>
         <v-btn @click="hideCart"><v-icon>mdi-close</v-icon></v-btn>
       </div>
       <div class="mx-auto text-center pt-6" :style="{ height: 'auto', width: '100%' }">
@@ -11,11 +11,11 @@
           class="d-flex justify-space-between mb-3 item_title"
           style="background: #fff"
         >
-          <span>商品</span>
-          <span>單價</span>
-          <span>數量</span>
-          <span>總計</span>
-          <span>操作</span>
+          <span>{{ $t("Item") }}</span>
+          <span>{{ $t("SinglePrice") }}</span>
+          <span>{{ $t("Count") }}</span>
+          <span>{{ $t("Total") }}</span>
+          <span>{{ $t("Operate") }}</span>
         </div>
         <div
           v-for="(item, index) in this.cartItem"
@@ -25,7 +25,7 @@
         >
           <div class="item">
             <v-img :src="item.img" class="imgBox"></v-img>
-            <v-text>{{ item.title }}</v-text>
+            <span>{{ item.title }}</span>
           </div>
           <div>
             <span>${{ item.prices }}</span>
@@ -35,11 +35,11 @@
             <span>{{ item.count }}</span>
             <button @click="increase(item)">＋</button>
           </div>
-          <v-text
-            ><span>{{ item.prices * item.count }}</span></v-text
+          <span
+            ><span>{{ item.prices * item.count }}</span></span
           >
-          <v-text @click="handledelete(index)"
-            ><v-icon color="error" style="cursor: pointer">mdi-delete</v-icon></v-text
+          <span @click="handledelete(index)"
+            ><v-icon color="error" style="cursor: pointer">mdi-delete</v-icon></span
           >
         </div>
         <div
@@ -47,7 +47,7 @@
           class="d-flex justify-center align-end"
           style="color: #666"
         >
-          <v-icon>mdi-shopping-outline</v-icon> 您購物車目前是空的
+          <v-icon>mdi-shopping-outline</v-icon> {{ $t("EmptyCart") }}
         </div>
       </div>
     </section>
@@ -56,8 +56,8 @@
     </v-snackbar>
     <section class="d-md-flex justify-space-between line">
       <div class="mb-6">
-        <v-text class="fw-4">( {{ totalCount }}項商品 )</v-text>
-        <v-text class="text-caption ml-1" style="color: red">{{ discount }}</v-text>
+        <span class="fw-4">( {{ totalCount }}項商品 )</span>
+        <span class="text-caption ml-1" style="color: red">{{ discount }}</span>
       </div>
       <div class="button-group">
         <v-btn
@@ -65,10 +65,12 @@
           color="#fff"
           style="background: red"
           @click="backToShop"
-          ><v-icon>mdi-arrow-left</v-icon>回去選購</v-btn
         >
+          <v-icon>mdi-arrow-left</v-icon>{{ $t("Back") }}
+        </v-btn>
         <v-btn class="fw-4 l-space" color="#fff" style="background: #000"
-          >結帳 . NT ${{ totalAmount }} <v-icon> mdi-chevron-right</v-icon></v-btn
+          >{{ `${$t("Checkout")} .NT $${totalAmount}`
+          }}<v-icon> mdi-chevron-right</v-icon></v-btn
         >
       </div>
     </section>
@@ -83,7 +85,7 @@ export default {
   data() {
     return {
       isCartOpen: false,
-      discount: "滿 NT$5000即享免運",
+      discount: this.$t("Free"),
       snackbar: false,
       snackbarText: "",
     };
@@ -100,7 +102,7 @@ export default {
     },
     handledelete(index) {
       this.cartItem.splice(index, 1);
-      this.showSnackbar(`商品已移除`);
+      this.showSnackbar(`${this.$t("Remove")}`);
     },
     showSnackbar(text) {
       this.snackbarText = text;
