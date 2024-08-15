@@ -17,8 +17,5 @@ export default {
         changeLanguage({commit}, lang){
             commit('setLanguage', lang);
         }
-    },
-    getters: {
-        currentLanguage: state => state.language
     }
 }
