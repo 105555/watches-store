@@ -59,7 +59,7 @@ pnpm build
 
 - `git subtree  push --prefix dist origin gh-pages` 部署 gh-pages branch
 
-### 專案呈現 ()
+### 專案呈現 (https://105555.github.io/store_shop/#/index)
 
 ### 注意
 
