@@ -31,22 +31,19 @@ pnpm build
 ```
 
 ## 技術棧
--	前端：Vue 3、Vuetify、Vite
+-	UI框架：Vuetify
 -	狀態管理：Vuex
 -   多語系: Vue@i18n
 -	路由管理：Vue Router
 -	後端服務：Firebase Authentication
 -	建構工具：Vite
 
-## 專案概述
-- 登入處理使用 `Firebase` 
-- 使用 `Vuex` 管理購物車系統 暫無後端資料庫
-- UI 框架使用 `Vuetify`
-
-## 功能特性
+## 功能概述
+-   註冊功能
 -	購物車功能：用戶可以添加、刪除、更新購物車內的商品。
 -	產品搜尋功能：用戶可以通過關鍵詞搜尋產品。
--   多語系： 支援繁體中文 / 英文 (未完成全部)。
+-   多語系：支援繁體中文 / 英文 (未完成全部)。
+-   RWD：支援 ipad、mobile、PC 響應式設計
 
 ## Firebase 配置
 -   複製 firebase.example 為 firebase.js
