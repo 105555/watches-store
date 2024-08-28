@@ -11,7 +11,7 @@ const INVALID_CHAR_REGEX = /[\u0000-\u001F"#$&*+,:;<=>?[\]^`{|}\u007F]/g;
 const DRIVE_LETTER_REGEX = /^[a-z]:/i;
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/store_shop",
+  base: "/store_shop/",
   plugins: [
     vue({
       template: { transformAssetUrls }
