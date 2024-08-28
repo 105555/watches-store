@@ -67,8 +67,9 @@ const nylon = reactive([
     imageName: "Home8.jpeg",
   },
 ]);
+// 打包成 dist 進入點要加上專案名稱
 function getImageUrl(name) {
-  return `/img/${name}`;
+  return `store_shop/img/${name}`;
 }
 </script>
 
